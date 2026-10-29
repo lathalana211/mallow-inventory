@@ -101,7 +101,7 @@ The API validates stock, calculates totals, creates the order and deducts stock 
 
 ## Billing Interface
 
-Open `/billing` after starting the Laravel development server.
+Open `/` after starting the Laravel development server.
 
 ## Queue Job
 
