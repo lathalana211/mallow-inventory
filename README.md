@@ -16,6 +16,16 @@ A Laravel-based store billing and inventory management system developed as part 
 - Billing interface with product selection, payment calculations, balance to return and low-stock alerts.
 - Automated tests for order creation and insufficient stock.
 
+## Assumptions and Design Decisions
+
+- Each order is associated with a customer using the provided customer details.
+- Product prices and tax percentages are taken from the database.
+- Stock cannot become negative; orders are rejected when available stock is insufficient.
+- Order creation and stock deduction are handled within a database transaction.
+- Row locking is used to reduce the risk of simultaneous orders overselling stock.
+- The order confirmation email is simulated through a queued job and logged instead of being sent through an actual email service.
+- The low-stock threshold is configurable through the API request.
+
 ## Requirements
 
 - PHP 8.2 or compatible version
